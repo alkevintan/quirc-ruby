@@ -48,7 +48,8 @@ static VALUE decoder_m_decode(VALUE self, VALUE image) {
 
     num_codes = quirc_count(qr);
     results = rb_ary_new2(num_codes);
-    for (int i = 0; i < num_codes; i++) {
+    int i;
+    for (i = 0; i < num_codes; i++) {
         struct quirc_code code;
         struct quirc_data data;
         quirc_decode_error_t err;
